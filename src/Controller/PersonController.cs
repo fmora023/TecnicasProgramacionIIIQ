@@ -1,22 +1,42 @@
-﻿using Model;
-
-namespace Controller
+﻿namespace Controller
 {
+    using Controller.DataHandler;
+    using Model;
+    using System;
+
     /// <summary>
     /// Class in charge of managing the Person entity.
     /// </summary>
-    public static class PersonController
+    public class PersonController
     {
+        private IDataHandler handler;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonController"/> class.
+        /// </summary>
+        public PersonController()
+        {
+            this.handler = new FileDataHandler();
+        }
+
         /// <summary>
         /// Gets the people.
         /// </summary>
         /// <returns>a list for the people existing in the DB.</returns>
-        public static List<Person> GetPeople()
+        public List<Person> GetPeople()
         {
-            return new List<Person>()
-            {
-                new Person("Christopher Calvo", DateTime.Today)
-            };
+            var filecontent = this.handler.ReadData();
+            var people = this.handler.GetPeople(filecontent);
+            return people;
+        }
+
+        /// <summary>
+        /// Update the items.
+        /// </summary>
+        /// <param name="dataStr">The data in a string.</param>
+        public void UpdateItems(string dataStr)
+        {
+            this.handler.WriteData(dataStr);
         }
     }
 }

@@ -31,8 +31,7 @@ namespace ProyectoClase
         private void InitializeComponent()
         {
             button1 = new Button();
-            lbl_Name = new Label();
-            lbl_Birth = new Label();
+            listView1 = new ListView();
             SuspendLayout();
             // 
             // button1
@@ -41,43 +40,34 @@ namespace ProyectoClase
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "Update";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // lbl_Name
+            // listView1
             // 
-            lbl_Name.AutoSize = true;
-            lbl_Name.Location = new Point(83, 103);
-            lbl_Name.Name = "lbl_Name";
-            lbl_Name.Size = new Size(0, 20);
-            lbl_Name.TabIndex = 1;
-            // 
-            // lbl_Birth
-            // 
-            lbl_Birth.AutoSize = true;
-            lbl_Birth.Location = new Point(245, 103);
-            lbl_Birth.Name = "lbl_Birth";
-            lbl_Birth.Size = new Size(0, 20);
-            lbl_Birth.TabIndex = 2;
+            listView1.Location = new Point(27, 38);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(455, 400);
+            listView1.TabIndex = 1;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(lbl_Birth);
-            Controls.Add(lbl_Name);
+            Controls.Add(listView1);
             Controls.Add(button1);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Button button1;
-        private Label lbl_Name;
-        private Label lbl_Birth;
+        private ListView listView1;
     }
 }

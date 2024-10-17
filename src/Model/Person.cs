@@ -6,15 +6,33 @@
     public class Person
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Person"/> class.
+        /// Initializes a new instance of the <see cref="Person" /> class.
         /// </summary>
         /// <param name="name">The name.</param>
-        /// <param name="birth">The birth.</param>
-        public Person(string name, DateTime birth)
+        /// <param name="lastname">The lastname.</param>
+        /// <param name="country">The country.</param>
+        public Person(string name, string lastname, string country)
         {
+            this.Country = country;
+            this.LastName = lastname;
             this.Name = name;
-            this.Birthday = birth;
         }
+
+        /// <summary>
+        /// Gets or sets the country.
+        /// </summary>
+        /// <value>
+        /// The country.
+        /// </value>
+        public string Country { get; set; }
+
+        /// <summary>
+        /// Gets or sets the last name.
+        /// </summary>
+        /// <value>
+        /// The last name.
+        /// </value>
+        public string LastName { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -23,13 +41,5 @@
         /// The name.
         /// </value>
         public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets the birthday.
-        /// </summary>
-        /// <value>
-        /// The birthday.
-        /// </value>
-        public DateTime Birthday { get; set; }
     }
 }
