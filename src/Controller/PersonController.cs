@@ -1,8 +1,8 @@
 ﻿namespace Controller
 {
+    using System;
     using Controller.DataHandler;
     using Model;
-    using System;
 
     /// <summary>
     /// Class in charge of managing the Person entity.

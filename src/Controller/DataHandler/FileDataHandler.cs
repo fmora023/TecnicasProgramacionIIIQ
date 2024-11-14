@@ -50,7 +50,7 @@
         /// <param name="data">The data.</param>
         public void WriteData(string data)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), this.Assets, "Users2.csv");
+            var path = Path.Combine(Directory.GetCurrentDirectory(), this.Assets, "Users.csv");
             File.WriteAllText(path, data);
         }
     }
