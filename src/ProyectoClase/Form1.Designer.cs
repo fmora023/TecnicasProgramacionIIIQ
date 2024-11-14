@@ -32,6 +32,7 @@ namespace ProyectoClase
         {
             button1 = new Button();
             listView1 = new ListView();
+            btn_Close = new Button();
             SuspendLayout();
             // 
             // button1
@@ -53,11 +54,22 @@ namespace ProyectoClase
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
             // 
+            // btn_Close
+            // 
+            btn_Close.Location = new Point(560, 180);
+            btn_Close.Name = "btn_Close";
+            btn_Close.Size = new Size(94, 29);
+            btn_Close.TabIndex = 2;
+            btn_Close.Text = "Cerrar";
+            btn_Close.UseVisualStyleBackColor = true;
+            btn_Close.Click += btn_Close_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(900, 500);
+            Controls.Add(btn_Close);
             Controls.Add(listView1);
             Controls.Add(button1);
             Name = "Form1";
@@ -69,5 +81,6 @@ namespace ProyectoClase
 
         private Button button1;
         private ListView listView1;
+        private Button btn_Close;
     }
 }

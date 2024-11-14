@@ -4,7 +4,7 @@ namespace ProyectoClase
 {
     public partial class Form1 : Form
     {
-        private PersonController controller;
+        private readonly PersonController controller;
         private readonly string Country = nameof(Country);
         private readonly string LastName = "Last Name";
         private readonly string NameColumn = "Name";
@@ -26,6 +26,21 @@ namespace ProyectoClase
         {
             var dataStr = $"{this.NameColumn},{this.LastName},{this.Country},{Environment.NewLine}";
             this.controller.UpdateItems(dataStr);
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            var messageBox = MessageBox.Show("Desea abrir la nueva ventana", "Title", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (messageBox == DialogResult.Yes)
+            {
+                var newForm = new Form2();
+                newForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("No se va a hacer nada");
+            }
         }
     }
 }
