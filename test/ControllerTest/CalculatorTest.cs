@@ -1,6 +1,7 @@
 namespace ControllerTest
 {
     using Controller;
+    using System.Globalization;
 
     /// <summary>
     /// Test for <see cref="Calculator"/>.

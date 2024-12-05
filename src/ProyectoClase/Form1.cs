@@ -1,10 +1,12 @@
 using Controller;
+using Model;
 
 namespace ProyectoClase
 {
     public partial class Form1 : Form
     {
         private readonly PersonController controller;
+        private List<Person> People { get; set; }
         private readonly string Country = nameof(Country);
         private readonly string LastName = "Last Name";
         private readonly string NameColumn = "Name";
@@ -15,6 +17,7 @@ namespace ProyectoClase
 
             this.controller = new PersonController();
             var people = controller.GetPeople();
+            this.People = people;
 
             this.listView1.Columns.Add(Text = NameColumn, Width = 100);
             this.listView1.Columns.Add(Text = LastName, Width = 100);
@@ -35,6 +38,7 @@ namespace ProyectoClase
             if (messageBox == DialogResult.Yes)
             {
                 var newForm = new Form2();
+                newForm.People = this.People;
                 newForm.Show();
             }
             else

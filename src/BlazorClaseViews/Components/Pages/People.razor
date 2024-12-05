@@ -1,0 +1,49 @@
+﻿@page "/people"
+@rendermode InteractiveServer
+@using Controller
+@using Model
+
+<h3>People</h3>
+
+@if (PeopleList != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var person in PeopleList)
+            {
+                <tr>
+                    <td>@person.Name </td>
+                    <td>@person.LastName</td>
+                    <td>@person.Country </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p><em>Loading...</em></p>
+}
+
+@code {
+    /// <summary>
+    /// The people List.
+    /// </summary>
+    public List<Person> PeopleList { get; set; }
+
+    private PersonController _personController { get; set; }
+
+    /// <inheritdoc />
+    protected override void OnInitialized()
+    {
+        _personController = new PersonController();
+        PeopleList = _personController.GetPeople();
+    }
+}

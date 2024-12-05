@@ -1,0 +1,30 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome <strong>to your new app</strong>.
+<br />
+<button class="mybutton" onclick="@Clicked">@buttonText</button>
+<br />
+<label>@counter</label>
+<br />
+<button class="mybutton" onclick="@Open">Open new Window</button>
+
+@code{
+    private string buttonText = "Click me!";
+    private int counter = 0;
+
+    public void Clicked()
+    {
+        counter++;
+    }
+
+    public void Open()
+    {
+        NavigationManager.NavigateTo("/people");
+    }
+}
