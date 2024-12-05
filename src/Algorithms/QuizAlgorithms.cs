@@ -53,6 +53,13 @@
 
         /// <summary>
         /// Determines whether the specified input is palindrome.
+        /// ana => ana => true
+        /// lava => aval => false
+        /// mama => amam => false
+        /// 
+        /// ana lava la casa => asacaalavalana => false.
+        /// 
+        /// analavalana => analavalana => true.
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>
