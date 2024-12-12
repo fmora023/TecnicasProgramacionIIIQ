@@ -67,7 +67,16 @@
         /// </returns>
         public bool IsPalindrome(string input)
         {
-            return false;
+            input = input.Replace(" ", string.Empty).ToLower();
+            for (var i = 0; i < input.Length / 2; i++)
+            {
+                if (input[i] != input[input.Length - i - 1])
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
